@@ -1,4 +1,4 @@
-<%@ page import="java.util.ArrayList,java.io.*,java.util.*,java.sql.*,java.time.LocalDateTime,java.time.format.DateTimeFormatter" %>
+<%@ page import="java.util.ArrayList,java.io.*,java.util.*,java.sql.*,java.time.LocalDateTime,java.time.format.DateTimeFormatter, java.lang.Math" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -130,7 +130,7 @@
         public void add(Tree child)
         {
     	    //TODO
-            children.add(Child);
+            children.add(child);
 
 
         }
@@ -170,7 +170,7 @@
             return 1;
         }
         
-        return (int)(Math.Pow(branchingFactor, height - 1)) + nnaryTreeSize(branchingFactor, height - 1));
+        return (int)(Math.pow(branchingFactor, height - 1)) + nnaryTreeSize(branchingFactor, height - 1);
     }
 
     /** **********************************************************************
@@ -184,9 +184,14 @@
     public int treeSum(Tree tree)
     {
     	//TODO
-        
+        int sum = 0;
+        ArrayList<Tree> arr = tree.getChildren();
+        for(int i = 0; i < arr.size(); i++)
+        {
+            sum += arr.get(i).getValue();
+        }
 
-        return tree.getValue() + treeSum(tree.getChildren());
+        return sum + tree.getValue();
 
     }
     

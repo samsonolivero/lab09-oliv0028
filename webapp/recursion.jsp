@@ -49,7 +49,7 @@
          * By doing this, we break up the equation n! into n! = n * (n-1)!.
          */
         //TODO
-	return value * factorial(value - 1);
+	    return value * factorial(value - 1);
 
     }
 
@@ -71,12 +71,12 @@
      */
     public int fibonacci(int n)
     {
-        //TODO
-	if(n <= 1)
-	{
-		return n;
-	}
-	return fibonacci(n-1) + fibonacci(n-2);
+            //TODO
+        if(n <= 1)
+        {
+            return n;
+        }
+        return fibonacci(n-1) + fibonacci(n-2);
     }
 
     
@@ -171,9 +171,6 @@
         }
         
         return (int)(Math.Pow(branchingFactor, height - 1)) + nnaryTreeSize(branchingFactor, height - 1));
-
-
-    	//TODO
     }
 
     /** **********************************************************************
@@ -188,6 +185,9 @@
     {
     	//TODO
         
+
+        return tree.getValue() + treeSum(tree.getChildren());
+
     }
     
     /** **********************************************************************

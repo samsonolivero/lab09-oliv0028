@@ -184,14 +184,20 @@
     public int treeSum(Tree tree)
     {
     	//TODO
-        int sum = 0;
-        ArrayList<Tree> arr = tree.getChildren();
-        for(int i = 0; i < arr.size(); i++)
+        
+        if(tree == null)
         {
-            sum += arr.get(i).getValue();
+            return 0;
+        }
+        int sum = tree.getValue();
+        
+        for(int i = 0; i < tree.getChildren().size(); i++)
+        {
+            sum += treeSum(tree.getChildren.get(i));
         }
 
-        return sum + tree.getValue();
+        return sum;
+
 
     }
     
